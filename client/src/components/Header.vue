@@ -20,6 +20,10 @@
         :to="{ name: 'register' }">
         Sign Up
       </v-btn>
+      <v-btn flat dark
+        :to="{ name: 'login' }">
+        Login
+      </v-btn>
     </v-toolbar-items>
   </v-toolbar>
 </template>
