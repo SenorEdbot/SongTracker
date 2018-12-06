@@ -1,28 +1,23 @@
 <template>
   <v-layout>
     <v-flex xs6 offset-xs3>
-      <div class="white elevation-2">
-        <v-toolbar flat dense class="cyan" dark>
-          <v-toolbar-title>Login</v-toolbar-title>
-        </v-toolbar>
-        <div class="pl-4 pr-4 pt-2 pb-2">
-          <v-text-field
-            type="email"
-            label="Email"
-            v-model="email" />
-          <br />
-          <v-text-field
-            type="password"
-            label="Password"
-            v-model="password" />
-          <br />
-          <div class="error" v-html="error" />
-          <v-btn
-            class="cyan"
-            dark
-            @click="login">Login</v-btn>
-        </div>
-      </div>
+      <panel title="Login">
+        <v-text-field
+          type="email"
+          label="Email"
+          v-model="email" />
+        <br />
+        <v-text-field
+          type="password"
+          label="Password"
+          v-model="password" />
+        <br />
+        <div class="error" v-html="error" />
+        <v-btn
+          class="cyan"
+          dark
+          @click="login">Login</v-btn>
+      </panel>
     </v-flex>
   </v-layout>
 </template>
@@ -44,7 +39,8 @@ export default {
           email: this.email,
           password: this.password
         })
-        console.log(response)
+        this.$store.dispatch('setToken', response.data.token)
+        this.$store.dispatch('setUser', response.data.user)
       } catch (error) {
         this.error = error.response.data.error
       }

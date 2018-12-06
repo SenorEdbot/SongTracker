@@ -1,11 +1,10 @@
 <template>
   <v-layout>
     <v-flex xs6 offset-xs3>
-      <div class="white elevation-2">
-        <v-toolbar flat dense class="cyan" dark>
-          <v-toolbar-title>Register</v-toolbar-title>
-        </v-toolbar>
-        <div class="pl-4 pr-4 pt-2 pb-2">
+      <panel title="Register">
+        <form
+          name="song-tracker-form"
+          autocomplete="off">
           <v-text-field
             type="email"
             label="Email"
@@ -14,15 +13,16 @@
           <v-text-field
             type="password"
             label="Password"
-            v-model="password" />
-          <br />
-          <div class="error" v-html="error" />
-          <v-btn
-            class="cyan"
-            dark
-            @click="register">Register</v-btn>
-        </div>
-      </div>
+            v-model="password"
+            autocomplete="new-password" />
+        </form>
+        <br />
+        <div class="error" v-html="error" />
+        <v-btn
+          class="cyan"
+          dark
+          @click="register">Register</v-btn>
+      </panel>
     </v-flex>
   </v-layout>
 </template>
@@ -44,7 +44,8 @@ export default {
           email: this.email,
           password: this.password
         })
-        console.log(response)
+        this.$store.dispatch('setToken', response.data.token)
+        this.$store.dispatch('setUser', response.data.user)
       } catch (error) {
         this.error = error.response.data.error
       }
