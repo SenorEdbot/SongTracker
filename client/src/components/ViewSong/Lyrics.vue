@@ -20,8 +20,8 @@ export default {
 <style scoped>
 
 .lyricsText {
-  width: 100%;
-  height: 600px;
+  width: 95%;
+  height: 300px;
   border: none;
   border-color: transparent;
   overflow: auto;

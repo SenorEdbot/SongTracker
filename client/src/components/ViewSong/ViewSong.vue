@@ -1,18 +1,19 @@
 <template>
-<v-layout>
-  <v-flex xs6>
-    <song-metadata :song="song" />
-  </v-flex>
-  <v-flex xs6 ml-2>
-    <youtube :youtubeId="song.youtubeId" />
-  </v-flex>
-  <v-flex xs6 ml-2>
-    <lyrics :lyrics="song.lyrics" />
-  </v-flex>
-  <v-flex xs6 ml-2>
-
-  </v-flex>
-</v-layout>
+<div>
+  <v-layout>
+    <v-flex xs6>
+      <song-metadata :song="song" />
+    </v-flex>
+    <v-flex xs6 ml-2>
+      <youtube :youtubeId="song.youtubeId" />
+    </v-flex>
+  </v-layout>
+  <v-layout>
+    <v-flex xs12 mt-2>
+      <lyrics :lyrics="song.lyrics" />
+    </v-flex>
+  </v-layout>
+</div>
 </template>
 
 <script>
