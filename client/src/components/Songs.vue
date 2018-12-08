@@ -29,12 +29,8 @@
               <v-btn
                 class="cyan"
                 dark
-                @click="navigateTo({
-                  name: 'song',
-                  params: {
-                    songId: song.id
-                  }
-                })">View</v-btn>
+                :to="{ name: 'song', params: { songId: song.id }}">
+                View</v-btn>
             </v-flex>
             <v-flex xs6>
               <img class="album-image" :src="song.albumImage" />
@@ -52,11 +48,6 @@ export default {
   data () {
     return {
       songs: null
-    }
-  },
-  methods: {
-    navigateTo (route) {
-      this.$router.push(route)
     }
   },
   async mounted () {
