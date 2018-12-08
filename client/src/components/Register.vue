@@ -17,7 +17,7 @@
             autocomplete="new-password" />
         </form>
         <br />
-        <div class="error" v-html="error" />
+        <div class="danger-alert" v-html="error" />
         <v-btn
           class="cyan"
           dark
@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style scoped>
-.error {
+.danger-alert {
   color: red;
 }
 </style>
