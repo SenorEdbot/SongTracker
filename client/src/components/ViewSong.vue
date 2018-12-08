@@ -8,9 +8,12 @@
 import SongsService from '@/services/SongsService'
 
 export default {
+  data () {
+    song: null
+  },
   async mounted () {
     const songId = this.$store.state.route.params.songId
-    const song = await SongsService.show(songId)
+    this.song = await SongsService.show(songId)
   }
 }
 </script>
