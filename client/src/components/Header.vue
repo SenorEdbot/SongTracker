@@ -4,7 +4,7 @@
       <router-link
         class="home"
         tag="span"
-        :to="{ name: 'root' }">
+        :to="{ name: 'songs' }">
         Song Tracker
       </router-link>
     </v-toolbar-title>
@@ -47,7 +47,7 @@ export default {
       this.$store.dispatch('setToken', null)
       this.$store.dispatch('setUser', null)
       this.$router.push({
-        name: 'root'
+        name: 'songs'
       })
     }
   }

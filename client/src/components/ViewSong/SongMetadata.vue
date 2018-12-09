@@ -13,7 +13,7 @@
         </div>
         <v-btn
           class="cyan"
-          :to="{ name: 'songs-edit', params: { songId: song.id }}"
+          :to="{ name: 'songs-edit', params () { return { songId: song.id }}}"
           dark>Edit</v-btn>
       </v-flex>
       <v-flex xs6>

@@ -95,7 +95,5 @@ export default {
 </script>
 
 <style scoped>
-.danger-alert {
-  color: red;
-}
+
 </style>
